@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    const int a = 40;
+  
+    int *ptr = &a;
+    *ptr = 88;
+  
+    printf(" Integer constant is %d\n", a);
+
+
+ const float num1 = 3.123; 
+ printf("floating constant is %f", num1);
+
+int *ptr1= &num1;
+*ptr1= 40.12222222;
+printf("floating constant is %f", num1);
+
+  
+    return 0;
+}                                         
