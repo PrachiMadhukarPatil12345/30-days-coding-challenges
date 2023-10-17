@@ -1,0 +1,37 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+class MostFrequent 
+{
+  static int mostFrequent(int array[], int n) 
+{
+Map < Integer, Integer > hm = new HashMap < Integer, Integer > ();
+
+    for (int i = 0; i < n; i++) {
+      int key = array[i];
+      if (hm.containsKey(key)) {
+        int freq = hm.get(key);
+        freq++;
+        hm.put(key, freq);
+      } else {
+        hm.put(key, 1);
+      }
+    }
+    int max_count = 0, res = -1;
+
+    for (Entry < Integer, Integer > val: hm.entrySet()) {
+      if (max_count < val.getValue()) {
+        res = val.getKey();
+        max_count = val.getValue();
+      }
+    }
+    System.out.println("The most frequent element in the array is");
+    return res;
+  }
+  public static void main(String[] args) {
+
+    int array[] = {40,40,30,40,50,3,30};
+    int n = array.length;
+    System.out.println(mostFrequent(array, n));
+  }
+}
